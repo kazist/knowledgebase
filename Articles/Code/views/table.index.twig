@@ -1,0 +1,74 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+{% set search = document.search %}
+
+<h1 class="component-header">Articles</h1>
+
+<form action="{{ generate_url('knowledgebase.articles') }}" method="POST">
+
+    <div class="knowledgebase-article-search">
+
+        <div class="col-md-3">
+            <label>Keyword</label><br>
+            {{ forms.input(' search.keyword', 'text', search.keyword ) }}
+        </div>
+
+        <div class="col-md-3">
+            <label>Category</label><br>
+            {% set category_id_parameter =  json_object.fields.category_id %}
+            {{ forms.input(' search.category_id', 'select', search.category_id, null, null, null, null, category_id_parameter.readonly, category_id_parameter.parameters.options, category_id_parameter ) }}
+        </div>
+
+        <div class="col-md-3">
+            <label>
+                &nbsp;
+            </label>
+
+            <br>
+
+            <button class="btn btn-success btn-xs" type="input" >
+                <i class=" fa fa-search"></i>
+                Search
+            </button>
+
+            <a class="btn btn-danger btn-xs" href="{{ generate_url('knowledgebase.articles', {'clear':'true'}) }}"> Reset</a>
+        </div>
+    </div>
+    <div class="clear-both"></div>
+
+    <div class="knowledgebase-articles">
+        {% if items|length > 0 %}
+            {% for key,item in items %}
+
+                {% set item_url = generate_url('knowledgebase.articles.detail', {'id':item.id}) %}
+
+
+                <div class="knowledgebase-article">
+
+                    <div class="knowledgebase-article-title">
+                        <a href="{{ item_url }}" title='{{ item.title }}'>
+                            {{ item.title }}
+                        </a>
+                    </div>
+
+                    <p>
+                        {{ item.article|striptags|truncate(250)|raw }}
+                    </p>
+
+                </div>
+
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <div class="clearfix"></div>
+
+    {% include "items.pagination.twig"%}
+
+    <div class="clearfix"></div>
+
+    {{ forms.input('_token' ) }} 
+
+</form>

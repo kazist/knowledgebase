@@ -1,0 +1,10 @@
+{
+    "KnowledgebaseArticles": {
+        "namespace": "Knowledgebase\\Articles",
+        "controller": "ArticlesController"
+    },
+    "KnowledgebaseCategories": {
+        "namespace": "Knowledgebase\\Categories",
+        "controller": "CategoriesController"
+    }
+}

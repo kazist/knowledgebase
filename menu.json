@@ -1,0 +1,19 @@
+{
+    "title": "Knowledgebase",
+    "description": "Knowledgebase ",
+    "alias": "knowledgebase",
+    "icon": "fa-picture-o",
+    "home_link": "knowledgebase\/articles",
+    "is_core": "1",
+    "menulist": [{
+            "title": "Articles",
+            "alias": "admin_knowledgebase_articles",
+            "url": "admin/knowledgebase/articles",
+            "children": []
+        }, {
+            "title": "Categories",
+            "alias": "admin_knowledgebase_categories",
+            "url": "admin/knowledgebase/categories",
+            "children": []
+        }]
+}

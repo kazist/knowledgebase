@@ -1,0 +1,8 @@
+{
+    "name": "knowledgebase",
+    "title": "Knowledgebase List",
+    "icon": "assets\/knowledgebase\/knowledgebase\/icon.png",
+    "extension": "component",
+    "path": "knowledgebase\/",
+    "description": "knowledgebase"
+}

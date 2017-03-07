@@ -1,0 +1,77 @@
+Knowledgebase\Articles\Code\Tables\Articles:
+  table: knowledgebase_articles
+  type: entity
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    title:
+      name: title
+      type: string
+      length: 255
+      nullable: false
+    category_id:
+      name: category_id
+      type: integer
+      length: 11
+      nullable: false
+    group_id:
+      name: group_id
+      type: integer
+      length: 11
+      nullable: true
+    article:
+      name: article
+      type: text
+      nullable: true
+    published:
+      name: published
+      type: integer
+      length: 11
+      nullable: true
+    featured:
+      name: featured
+      type: integer
+      length: 11
+      nullable: true
+    has_comments:
+      name: has_comments
+      type: integer
+      length: 11
+      nullable: true
+    hit:
+      name: hit
+      type: integer
+      length: 11
+      nullable: true
+    created_by:
+      name: created_by
+      type: integer
+      length: 11
+      nullable: true
+    date_created:
+      name: date_created
+      type: datetime
+      nullable: true
+    modified_by:
+      name: modified_by
+      type: integer
+      length: 11
+      nullable: true
+    date_modified:
+      name: date_modified
+      type: datetime
+      nullable: true
+  indexes:
+    category_id_index:
+      columns: [category_id]
+    group_id_index:
+      columns: [group_id]
+  lifecycleCallbacks:
+    prePersist:
+      - onPrePersist
+      - onPrePersistCallbacks
+    preUpdate:
+      - onPreUpdate
+      - onPreUpdateCallbacks
