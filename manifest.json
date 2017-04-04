@@ -1,8 +1,8 @@
 {
-    "name": "knowledgebase",
+    "name": "kazist/knowledgebase",
     "title": "Knowledgebase List",
     "icon": "assets\/knowledgebase\/knowledgebase\/icon.png",
     "extension": "component",
-    "path": "knowledgebase\/",
+    "path": "applications/knowledgebase/",
     "description": "knowledgebase"
 }
