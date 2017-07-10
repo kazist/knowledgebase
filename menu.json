@@ -2,18 +2,20 @@
     "title": "Knowledgebase",
     "description": "Knowledgebase ",
     "alias": "knowledgebase",
-    "icon": "fa-picture-o",
+    "icon": "fa fa-info-circle",
     "home_link": "knowledgebase\/articles",
     "is_core": "1",
     "menulist": [{
             "title": "Articles",
             "alias": "admin_knowledgebase_articles",
             "url": "admin/knowledgebase/articles",
+            "icon": "fa fa-file-text",
             "children": []
         }, {
             "title": "Categories",
             "alias": "admin_knowledgebase_categories",
             "url": "admin/knowledgebase/categories",
+            "icon": "fa fa-navicon",
             "children": []
         }]
 }
