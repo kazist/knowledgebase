@@ -4,6 +4,7 @@
     "alias": "knowledgebase",
     "icon": "fa fa-info-circle",
     "home_link": "knowledgebase\/articles",
+    "path": "applications/Knowledgebase",
     "is_core": "1",
     "menulist": [{
             "title": "Articles",
