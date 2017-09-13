@@ -6,7 +6,6 @@
             "permissions": "can_view, can_viewown",
             "unique_name": "knowledgebase.articles",
             "route": "knowledgebase/articles",
-            "seo_url": "knowledgebase",
             "arguments": "",
             "keywords": "article, list",
             "priority": "0.5",
@@ -24,13 +23,9 @@
             "controller": "Knowledgebase\\Articles\\Code\\Controllers\\ArticlesController::detailAction",
             "unique_name": "knowledgebase.articles.detail",
             "route": "knowledgebase/articles/detail/{id}",
-            "seo_url": "knowledgebase/{slug}",
             "permissions": "can_view, can_viewown",
             "arguments": {
                 "id": null
-            },
-            "seo_arguments": {
-                "slug": null
             },
             "keywords": "article, detail, {{ item.name }}",
             "priority": "0.5",

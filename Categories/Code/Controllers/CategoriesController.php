@@ -20,5 +20,25 @@ defined('KAZIST') or exit('Not Kazist Framework');
 use Kazist\Controller\BaseController;
 
 class CategoriesController extends BaseController {
-    
+
+    public function indexAction($offset = 0, $limit = 10) {
+
+        $tmp_items = $this->model->getRecords();
+        $items = $this->model->getProcessRecords($tmp_items);
+
+        $this->data_arr['items'] = $items;
+
+        return parent::indexAction($offset, $limit);
+    }
+
+    public function detailAction($id = '', $slug = '') {
+
+        $tmp_item = $this->model->getRecord();
+        $item = $this->model->getProcessRecord($tmp_item);
+
+        $this->data_arr['item'] = $item;
+
+        return parent::detailAction($id, $slug);
+    }
+
 }

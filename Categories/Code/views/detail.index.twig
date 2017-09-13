@@ -5,16 +5,34 @@
 
 
 <div class="cms-content">
+
     <h1 class="component-header">{{ item.title }} </h1>
 
     <div class="col-sm-offset-1 col-sm-10">
+        
         {% if item.image %}
             <div class="img-wrapper text-center">
                 <img src="{{ resized_image(item.article_image.file, null, 300, 'fit') }}" alt="{{ item.title }}" title="{{ item.title }}">
             </div> 
         {% endif %}
 
-        {{ item.article|raw }}
+        {{ item.description|raw }}
+        <hr>
+
+        {% if item.articles|length > 0 %}
+            <ul>
+                {% for key,article in item.articles %}
+
+                    {% set article_url = generate_url('knowledgebase.articles.detail', {'id':article.id}) %}
+
+                    <li>
+                        <a href="{{ article_url }}" title='{{ article.title }}'>
+                            {{ article.title }} 
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
 
         {{ forms.input('id', 'hidden', item.id) }}
 

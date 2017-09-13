@@ -1,0 +1,50 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+{% set search = document.search %}
+
+<h1 class="component-header">Knowledgebase Categories</h1>
+
+<form action="{{ generate_url('knowledgebase.categories') }}" method="POST">
+
+    {% if items|length > 0 %}
+        {% for key,item in items %}
+            <div class="col-sm-6">
+                {% set item_url = generate_url('knowledgebase.categories.detail', {'id':item.id}) %}
+
+                <h4>
+                    <a href="{{ item_url }}" title='{{ item.title }}'>
+                        {{ item.title }}
+                    </a>
+                </h4>  
+                <hr>
+                
+                {% if item.articles|length > 0 %}
+                    <ul>
+                        {% for key,article in item.articles %}
+
+                            {% set article_url = generate_url('knowledgebase.articles.detail', {'id':article.id}) %}
+
+                            <li>
+                                <a href="{{ article_url }}" title='{{ article.title }}'>
+                                    {{ article.title }} 
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="clearfix"></div>
+
+    {% include "items.pagination.twig"%}
+
+    <div class="clearfix"></div>
+
+    {{ forms.input('_token' ) }} 
+
+</form>
+
