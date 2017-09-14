@@ -14,7 +14,7 @@
                     <br>
 
                     <small>
-                        <i class="fa fa-clock-o"> Posted On:</i>{{ article.date_created|date('Y-m-d') }} 
+                        <i class="fa fa-clock-o"> Posted On:</i>{{ article.date_created|date('Y-m-d',  document.timezone) }} 
                     </small>
 
                     <div class="clearfix"></div>
