@@ -68,6 +68,10 @@ Knowledgebase\Articles\Code\Tables\Articles:
       columns: [category_id]
     group_id_index:
       columns: [group_id]
+    created_by_index:
+      columns: [created_by]
+    modified_by_index:
+      columns: [modified_by]
   lifecycleCallbacks:
     prePersist:
       - onPrePersist

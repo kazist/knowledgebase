@@ -223,7 +223,8 @@
             "parameters": {
                 "general": {
                     "col": "",
-                    "row": ""
+                    "row": "",
+                    "editor_type": "advanced"
                 },
                 "source": [],
                 "save": {
@@ -359,6 +360,7 @@
                     "join_table_name": "users_users"
                 },
                 "save": {
+                    "view_side": "both",
                     "index": ""
                 },
                 "media": [],
@@ -415,6 +417,7 @@
                     "join_table_name": "users_users"
                 },
                 "save": {
+                    "view_side": "both",
                     "index": ""
                 },
                 "media": [],
@@ -452,7 +455,6 @@
     "table_alias": "ka",
     "foreignkey": "",
     "renamedfields": "",
-    "slug": "{{ title }}",
     "main_fields": [
         "id"
     ],
@@ -483,8 +485,10 @@
             "ka.has_comments",
             "ka.hit",
             "ka.created_by",
+            "uu.name AS created_by_name",
             "ka.date_created",
             "ka.modified_by",
+            "uu_4760.name AS modified_by_name",
             "ka.date_modified"
         ],
         "leftjoin": [
@@ -499,6 +503,18 @@
                 "alias": "ug",
                 "name": "#__users_groups",
                 "on": "ka.group_id = ug.id"
+            },
+            {
+                "table": "Users\\Users\\Code\\Tables\\Users",
+                "alias": "uu",
+                "name": "#__users_users",
+                "on": "ka.created_by = uu.id"
+            },
+            {
+                "table": "Users\\Users\\Code\\Tables\\Users",
+                "alias": "uu_4760",
+                "name": "#__users_users",
+                "on": "ka.modified_by = uu_4760.id"
             }
         ]
     }

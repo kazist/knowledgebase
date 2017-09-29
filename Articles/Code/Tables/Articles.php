@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Articles
  *
- * @ORM\Table(name="knowledgebase_articles", indexes={@ORM\Index(name="category_id_index", columns={"category_id"}), @ORM\Index(name="group_id_index", columns={"group_id"})})
+ * @ORM\Table(name="knowledgebase_articles", indexes={@ORM\Index(name="category_id_index", columns={"category_id"}), @ORM\Index(name="group_id_index", columns={"group_id"}), @ORM\Index(name="created_by_index", columns={"created_by"}), @ORM\Index(name="modified_by_index", columns={"modified_by"})})
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
@@ -110,7 +110,7 @@ class Articles extends \Kazist\Table\BaseTable
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -121,6 +121,7 @@ class Articles extends \Kazist\Table\BaseTable
      * Set title
      *
      * @param string $title
+     *
      * @return Articles
      */
     public function setTitle($title)
@@ -133,7 +134,7 @@ class Articles extends \Kazist\Table\BaseTable
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -141,9 +142,10 @@ class Articles extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set category_id
+     * Set categoryId
      *
      * @param integer $categoryId
+     *
      * @return Articles
      */
     public function setCategoryId($categoryId)
@@ -154,9 +156,9 @@ class Articles extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get category_id
+     * Get categoryId
      *
-     * @return integer 
+     * @return integer
      */
     public function getCategoryId()
     {
@@ -164,9 +166,10 @@ class Articles extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set group_id
+     * Set groupId
      *
      * @param integer $groupId
+     *
      * @return Articles
      */
     public function setGroupId($groupId)
@@ -177,9 +180,9 @@ class Articles extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get group_id
+     * Get groupId
      *
-     * @return integer 
+     * @return integer
      */
     public function getGroupId()
     {
@@ -190,6 +193,7 @@ class Articles extends \Kazist\Table\BaseTable
      * Set article
      *
      * @param string $article
+     *
      * @return Articles
      */
     public function setArticle($article)
@@ -202,7 +206,7 @@ class Articles extends \Kazist\Table\BaseTable
     /**
      * Get article
      *
-     * @return string 
+     * @return string
      */
     public function getArticle()
     {
@@ -213,6 +217,7 @@ class Articles extends \Kazist\Table\BaseTable
      * Set published
      *
      * @param integer $published
+     *
      * @return Articles
      */
     public function setPublished($published)
@@ -225,7 +230,7 @@ class Articles extends \Kazist\Table\BaseTable
     /**
      * Get published
      *
-     * @return integer 
+     * @return integer
      */
     public function getPublished()
     {
@@ -236,6 +241,7 @@ class Articles extends \Kazist\Table\BaseTable
      * Set featured
      *
      * @param integer $featured
+     *
      * @return Articles
      */
     public function setFeatured($featured)
@@ -248,7 +254,7 @@ class Articles extends \Kazist\Table\BaseTable
     /**
      * Get featured
      *
-     * @return integer 
+     * @return integer
      */
     public function getFeatured()
     {
@@ -256,9 +262,10 @@ class Articles extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set has_comments
+     * Set hasComments
      *
      * @param integer $hasComments
+     *
      * @return Articles
      */
     public function setHasComments($hasComments)
@@ -269,9 +276,9 @@ class Articles extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get has_comments
+     * Get hasComments
      *
-     * @return integer 
+     * @return integer
      */
     public function getHasComments()
     {
@@ -282,6 +289,7 @@ class Articles extends \Kazist\Table\BaseTable
      * Set hit
      *
      * @param integer $hit
+     *
      * @return Articles
      */
     public function setHit($hit)
@@ -294,7 +302,7 @@ class Articles extends \Kazist\Table\BaseTable
     /**
      * Get hit
      *
-     * @return integer 
+     * @return integer
      */
     public function getHit()
     {
@@ -302,9 +310,9 @@ class Articles extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get created_by
+     * Get createdBy
      *
-     * @return integer 
+     * @return integer
      */
     public function getCreatedBy()
     {
@@ -312,9 +320,9 @@ class Articles extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get date_created
+     * Get dateCreated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateCreated()
     {
@@ -322,9 +330,9 @@ class Articles extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get modified_by
+     * Get modifiedBy
      *
-     * @return integer 
+     * @return integer
      */
     public function getModifiedBy()
     {
@@ -332,9 +340,9 @@ class Articles extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get date_modified
+     * Get dateModified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateModified()
     {
@@ -348,3 +356,4 @@ class Articles extends \Kazist\Table\BaseTable
         // Add your code here
     }
 }
+
