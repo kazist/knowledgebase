@@ -25,7 +25,11 @@ class CategoriesModel extends BaseModel {
         $factory = new KazistFactory();
 
         foreach ($records as $key => $record) {
-            $records[$key]->articles = $factory->getRecords('#__knowledgebase_articles', 'ka', array('ka.category_id=:category_id'), array('category_id' => $record->id));
+            $query = $factory->getQueryBuilder('#__knowledgebase_articles', 'ka', array('ka.category_id=:category_id'), array('category_id' => $record->id));
+            $query->setMaxResults(6);
+            $articles = $query->loadObjectList();
+
+            $records[$key]->articles = $articles;
         }
 
         return $records;

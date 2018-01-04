@@ -55,8 +55,8 @@ class ArticleModel {
         $query->select('ka.*, uu.name as author_name');
         $query->from('#__knowledgebase_articles', 'ka');
         $query->leftJoin('ka', '#__users_users', 'uu', 'uu.id = ka.created_by');
-        $query->andWhere('ka.group_id IS NULL OR ka.group_id IN (' . $ids . ')');
-        $query->where('ka.published=1');
+        $query->andWhere('ka.group_id = 0 OR ka.group_id IS NULL ka.group_id = \'\' OR  OR ka.group_id IN (' . $ids . ')');
+        $query->andWhere('ka.published=1');
 
         switch ($filter_type) {
             case 'popular':

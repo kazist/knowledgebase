@@ -10,7 +10,7 @@
 
     {% if items|length > 0 %}
         {% for key,item in items %}
-            <div class="col-sm-6">
+            <div class="col-sm-6 knowledgebase-group">
                 {% set item_url = generate_url('knowledgebase.categories.detail', {'id':item.id}) %}
 
                 <h4>
@@ -48,3 +48,11 @@
 
 </form>
 
+<style>
+    .knowledgebase-group h4{
+        font-size: 24px;
+    }
+    .knowledgebase-group li a{
+        font-size: 16px;
+    }
+</style>
